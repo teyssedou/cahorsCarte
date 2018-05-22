@@ -2,16 +2,11 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  background-color: #574844;
+  color: #ceebe2;
+  height: 100vh;
+  padding-top: 15px;
 }
 
 .App-title {
@@ -22,13 +17,22 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.leaflet-container {
+  height: 100vh;
 }
 
-.leaflet-container {
-  height: 500px;
-  width: 50%;
-  margin: auto;
+.menu{
+  background-color: #574844;
+  color: #ceebe2;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.col-sm-9, .col-sm-3 {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
 }

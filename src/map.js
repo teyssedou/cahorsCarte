@@ -17,27 +17,6 @@ class Carte extends Component {
                 };
       }
   
-    componentDidMount() {
-      fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?q=Cahors,fr&lang=fr&appid=3b2086e0bc075921948dadd86108f378"
-      )
-        .then(res => res.json())
-        .then(resultat => {
-          if (resultat.city) {
-            this.setState({
-              isLoaded: true,
-              information: resultat
-            });
-          } else {
-            this.setState({
-              isLoaded: false,
-              error: "Ville Introuvable"
-            });
-          }
-          console.log(resultat);
-        });
-    }
-  
     render() {
         return (
           <div id="map-position">
@@ -46,7 +25,7 @@ class Carte extends Component {
              attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
            />
-            </Map> 
+            </Map>
           </div>
         );
       }
