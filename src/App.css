@@ -1,12 +1,10 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
   background-color: #574844;
   color: #ceebe2;
   height: 100vh;
   padding-top: 15px;
+  padding-left: 20px;
+  overflow: scroll;
 }
 
 .App-title {
@@ -31,8 +29,25 @@
   max-width: 100%;
 }
 
-.col-sm-9, .col-sm-3 {
+.col-sm-8, .col-sm-4 {
   padding: 0;
   margin: 0;
   height: 100vh;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.display-none {
+  display: none;
+}
+
+h5 {
+  cursor: pointer;
 }
