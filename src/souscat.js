@@ -17,17 +17,17 @@ class Souscat extends React.Component {
   render() {
       return (
       	<div>
-          	{Datas.map((data, i) =>
-				<div>
-	          		<h5 id={i} onClick={()=>this.displayCat(i)}>{data.name}</h5>
-	      			<ul id={"list"+ i} className="display-none">
-				         {data.children.map((child, j) =><li>{child.name}</li>)}
-				    </ul>
-				</div>
+          {Datas.map((data, i) =>
+				    <div key={data.id}>
+	           <h5 id={i} onClick={()=>this.displayCat(i)}>{data.name}</h5>
+	      		 <ul id={"list"+ i} className="display-none">
+				      {data.children.map((child, j) =><li key={child.id}>{child.name}</li>)}
+				     </ul>
+				    </div>
 	        )}
         </div>
       );
-    }
+  }
 }
 
 export default Souscat;
