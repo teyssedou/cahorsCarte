@@ -37,9 +37,12 @@ class Souscat extends React.Component {
       <div>
         {Datas.map((data, i) => (
           <div key={data.id}>
-            <h5 id={i} onClick={() => this.displayCat(i)}>
-              {data.name}
-            </h5>
+            <div className="title">
+              <img src={Plus} id="iconTitle" />
+              <h5 id={i} onClick={() => this.displayCat(i)}>
+                {data.name}
+              </h5>
+            </div>
             <ul id={"list" + i} className="display-none">
               {data.children.map((child, j) => (
                 <li key={child.id}>{child.name}</li>
