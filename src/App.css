@@ -20,7 +20,7 @@
   height: 100vh;
 }
 
-.menu{
+.menu {
   background-color: #574844;
   color: #ceebe2;
 }
@@ -80,4 +80,9 @@ h5 {
 .sousCatName {
   color: #f9a27f;
   font-size: 19px;
+}
+
+.leaflet-div-icon {
+  background-color: transparent;
+  border: hidden;
 }

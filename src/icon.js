@@ -1,4 +1,4 @@
-import L from 'leaflet';
+import L from "leaflet";
 
 class Icones extends Component {
 
@@ -85,3 +85,4 @@ class Icones extends Component {
 }
 
 export default Icones;
+
