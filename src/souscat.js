@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from "react-dom";
 import Datas from "./places.json";
+import Plus from "./img/plus.svg";
 
 class Souscat extends React.Component {
 
@@ -19,10 +20,25 @@ class Souscat extends React.Component {
       	<div>
           {Datas.map((data, i) =>
 				    <div key={data.id}>
-	           <h5 id={i} onClick={()=>this.displayCat(i)}>{data.name}</h5>
-	      		 <ul id={"list"+ i} className="display-none">
-				      {data.children.map((child, j) =><li key={child.id}>{child.name}</li>)}
-				     </ul>
+              <div className="title">
+                <img src={Plus} id="iconTitle" />
+	              <h5 id={i} onClick={()=>this.displayCat(i)}>{data.name}</h5>
+              </div>
+	      		  <ul id={"list"+ i} className="display-none">
+				      {data.children.map((child, j) =>
+                <li key={child.id} className="sousCatName">{child.name}
+                <ul className="display-none">
+                   {child.places.map((place, k) => (
+                     <li>
+                       {place.name}
+                       <br />
+                       {place.lat}
+                       <br />
+                       {place.lon}
+                     </li>
+                   ))}
+                 </ul></li>)}
+				      </ul>
 				    </div>
 	        )}
         </div>

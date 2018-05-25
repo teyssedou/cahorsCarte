@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from "react-dom";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Datas from "./places.json";
-import {  iconParking  } from './icon.js';
+import { iconParking, iconBriefcase, iconPlaceholder, iconPuzzle, iconRecycling, iconTrash } from './icon.js';
 
 
 const stamenTonerTiles =
@@ -13,16 +13,17 @@ const stamenTonerAttr =
 
 
 class Carte extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
           mapCenter : [44.4475229, 1.441989],
           zoomLevel : 14,
-          lat: 44.44714682004518,
-          lng: 1.4340350031852722
-                };
+          lat: 44.4535718,
+          lng: 1.4325743
+        };
       }
-  
+
     render() {
 
       const position = [this.state.lat, this.state.lng];
@@ -30,13 +31,19 @@ class Carte extends Component {
         return (
           <div id="map-position">
             <Map center={this.state.mapCenter} zoom={this.state.zoomLevel}>
-            <TileLayer
-             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-           />
-             <Marker position={position} icon={ iconParking }>
-             <Popup><span> Yes!</span></Popup>
-        </Marker>
+              <TileLayer
+                attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={position} icon={iconParking}>
+                <Popup>
+                {Datas.map((data, i) =>
+                      data.children.map((child, j) =>
+                           child.places.map((lieu, k) => 
+                  <span>yes{lieu.name}</span>
+                      )))};
+                </Popup>
+              </Marker>
             </Map>
           </div>
         );
