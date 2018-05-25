@@ -29,7 +29,7 @@ class Souscat extends React.Component {
                 <li key={child.id} className="sousCatName">{child.name}
                 <ul className="display-none">
                    {child.places.map((place, k) => (
-                     <li>
+                     <li key={place.id}>
                        {place.name}
                        <br />
                        {place.lat}

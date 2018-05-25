@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { render } from "react-dom";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Datas from "./places.json";
-import { iconParking, iconBriefcase, iconPlaceholder, iconPuzzle, iconRecycling, iconTrash } from './icon.js';
 
 
 const stamenTonerTiles =
@@ -35,7 +34,7 @@ class Carte extends Component {
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={position} icon={iconParking}>
+              <Marker position={position}>
                 <Popup>
                 {Datas.map((data, i) =>
                       data.children.map((child, j) =>
